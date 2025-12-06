@@ -1,127 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Παραγγελία BEWOOFED</title>
-  <style>
-    body{font-family: system-ui, Arial; max-width:720px; margin:2rem auto; padding:1rem}
-    h2{margin-bottom:0.5rem}
-    label{display:block; margin-top:0.3rem}
-    .row{display:flex; gap:12px; align-items:center; margin-top:12px}
-    .row img{width:100px; height:auto; border:1px solid #ccc; border-radius:6px}
-    input[type="number"]{width:80px; padding:6px}
-    button{margin-top:18px; padding:10px 16px; font-size:16px; cursor:pointer}
-  </style>
-</head>
-<body>
-  <!-- Encabezado con logo -->
-  <h2 style="display:flex; align-items:center; gap:10px;">
-    <img src="img/logo.jpg" alt="BEWOOFED" style="height:40px;">
-    Παραγγελία BEWOOFED
-  </h2>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8">
+    <title>Παραγγελία BEWOOFED</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      form label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #e65c00;
+      }
+      img.logo {
+        width: 120px;
+        height: auto;
+        display: block;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Παραγγελία BEWOOFED</h2>
+    <img src="logo.jpg" alt="BEWOOFED" class="logo">
+    <p>Συμπληρώστε την παραγγελία σας επιλέγοντας την ποσότητα για κάθε προϊόν.</p>
 
-  <p style="color:#444">Για να δοκιμάσετε το κατάστημα, προσθέστε <code>?tienda=Atenas</code> στο τέλος της διεύθυνσης URL του προγράμματος περιήγησης.</p>
+    <form id="form">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" required />
 
-  <form id="form">
-    <h3>Προϊόντα</h3>
+      <label>Μαντιλάκια σκύλων 80τμχ Αλόη βέρα:</label>
+      <input type="number" id="producto1" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p1.png" alt="Μαντιλάκια σκύλων 80τμχ Αλόη βέρα">
-      <label for="p1">Μαντιλάκια σκύλων 80τμχ Αλόη βέρα</label>
-      <input type="number" id="p1" min="0" value="0">
-    </div>
+      <label>Κομποστοποιήσιμα σακουλάκια 120τμχ Bart:</label>
+      <input type="number" id="producto2" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p2.png" alt="Κομποστοποιήσιμα σακουλάκια 120τμχ Bart">
-      <label for="p2">Κομποστοποιήσιμα σακουλάκια 120τμχ Bart</label>
-      <input type="number" id="p2" min="0" value="0">
-    </div>
+      <label>Μπαντάνα σκύλου Small Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto3" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p3.png" alt="Μπαντάνα σκύλου Small Bewoofed x Wildbarks">
-      <label for="p3">Μπαντάνα σκύλου Small Bewoofed x Wildbarks</label>
-      <input type="number" id="p3" min="0" value="0">
-    </div>
+      <label>Μπαντάνα σκύλου Medium Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto4" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p4.png" alt="Μπαντάνα σκύλου Medium Bewoofed x Wildbarks">
-      <label for="p4">Μπαντάνα σκύλου Medium Bewoofed x Wildbarks</label>
-      <input type="number" id="p4" min="0" value="0">
-    </div>
+      <label>Μπαντάνα σκύλου Large Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto5" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p5.png" alt="Μπαντάνα σκύλου Large Bewoofed x Wildbarks">
-      <label for="p5">Μπαντάνα σκύλου Large Bewoofed x Wildbarks</label>
-      <input type="number" id="p5" min="0" value="0">
-    </div>
+      <label>Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto6" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p6.png" alt="Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks">
-      <label for="p6">Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks</label>
-      <input type="number" id="p6" min="0" value="0">
-    </div>
+      <label>Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto7" min="0" value="0" />
 
-    <div class="row">
-      <img src="img/p7.png" alt="Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks">
-      <label for="p7">Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks</label>
-      <input type="number" id="p7" min="0" value="0">
-    </div>
+      <button type="submit">Αποστολή</button>
+    </form>
 
-    <button type="submit">Αποστολή Παραγγελίας</button>
-  </form>
+    <script>
+      document.getElementById("form").addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-  <script>
-    const TOKEN = "7847106903:AAGh1IsNegAz50BuSdraR5p1c0yktspHniM";
-    const CHAT_ID = "1446479004";
+        const nombre = document.getElementById("nombre").value;
+        const prod1 = document.getElementById("producto1").value;
+        const prod2 = document.getElementById("producto2").value;
+        const prod3 = document.getElementById("producto3").value;
+        const prod4 = document.getElementById("producto4").value;
+        const prod5 = document.getElementById("producto5").value;
+        const prod6 = document.getElementById("producto6").value;
+        const prod7 = document.getElementById("producto7").value;
 
-    // Obtener tienda desde la URL
-    const params = new URLSearchParams(window.location.search);
-    const tienda = params.get("tienda") || "No identificada";
+        const params = new URLSearchParams(window.location.search);
+        const tienda = params.get("tienda") || "Sin tienda";
 
-    document.getElementById("form").addEventListener("submit", async function (e) {
-      e.preventDefault();
+        const mensaje = `
+👤 Nombre: ${nombre}
+🏬 Tienda: ${tienda}
+💌 Pedido:
+- Μαντιλάκια σκύλων 80τμχ Αλόη βέρα: ${prod1}
+- Κομποστοποιήσιμα σακουλάκια 120τμχ Bart: ${prod2}
+- Μπαντάνα σκύλου Small Bewoofed x Wildbarks: ${prod3}
+- Μπαντάνα σκύλου Medium Bewoofed x Wildbarks: ${prod4}
+- Μπαντάνα σκύλου Large Bewoofed x Wildbarks: ${prod5}
+- Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks: ${prod6}
+- Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks: ${prod7}
+        `;
 
-      const p1 = document.getElementById("p1").value || 0;
-      const p2 = document.getElementById("p2").value || 0;
-      const p3 = document.getElementById("p3").value || 0;
-      const p4 = document.getElementById("p4").value || 0;
-      const p5 = document.getElementById("p5").value || 0;
-      const p6 = document.getElementById("p6").value || 0;
-      const p7 = document.getElementById("p7").value || 0;
+        const TOKEN = "7847106903:AAGh1IsNegAz50BuSdraR5p1c0yktspHniM";
+        const CHAT_ID = "1446479004";
 
-      let texto = `📦 *Νέα Παραγγελία*\n`;
-      texto += `🏪 *Κατάστημα:* ${tienda}\n\n`;
-      texto += `📝 *Ζητούμενες Ποσότητες:*\n`;
-      texto += `• Μαντιλάκια σκύλων 80τμχ Αλόη βέρα: ${p1}\n`;
-      texto += `• Κομποστοποιήσιμα σακουλάκια 120τμχ Bart: ${p2}\n`;
-      texto += `• Μπαντάνα σκύλου Small Bewoofed x Wildbarks: ${p3}\n`;
-      texto += `• Μπαντάνα σκύλου Medium Bewoofed x Wildbarks: ${p4}\n`;
-      texto += `• Μπαντάνα σκύλου Large Bewoofed x Wildbarks: ${p5}\n`;
-      texto += `• Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks: ${p6}\n`;
-      texto += `• Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks: ${p7}\n`;
+        await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(mensaje)}`);
 
-      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text: texto,
-          parse_mode: "Markdown"
-        })
+        alert("Η παραγγελία στάλθηκε στο Telegram!");
       });
-
-      alert("Η παραγγελία στάλθηκε επιτυχώς στο Telegram!");
-
-      // Resetear valores
-      document.getElementById("p1").value = 0;
-      document.getElementById("p2").value = 0;
-      document.getElementById("p3").value = 0;
-      document.getElementById("p4").value = 0;
-      document.getElementById("p5").value = 0;
-      document.getElementById("p6").value = 0;
-      document.getElementById("p7").value = 0;
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
