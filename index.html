@@ -1,126 +1,171 @@
 <!DOCTYPE html>
 <html lang="el">
-  <head>
-    <meta charset="UTF-8">
-    <title>Παραγγελία BEWOOFED</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        max-width: 600px;
-        margin: auto;
-        background-color: #f9f9f9;
-      }
-      h2 {
-        color: #333;
-        text-align: center;
-      }
-      form label {
-        display: block;
-        margin-top: 10px;
-        font-weight: bold;
-      }
-      input[type="text"], input[type="number"] {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        box-sizing: border-box;
-        font-size: 16px;
-      }
-      button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #ff6600;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 18px;
-        width: 100%;
-      }
-      button:hover {
-        background-color: #e65c00;
-      }
-      img.logo {
-        width: 120px;
-        height: auto;
-        display: block;
-        margin: 0 auto 20px auto;
-      }
-      p {
-        text-align: center;
-        font-size: 16px;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Παραγγελία BEWOOFED</h2>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Παραγγελία BEWOOFED</title>
+  <style>
+    body {
+      font-family: system-ui, Arial;
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 28px;
+    }
+    label {
+      display: block;
+      margin-top: 0.3rem;
+      font-weight: bold;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .row img {
+      width: 100px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    input[type="number"] {
+      width: 80px;
+      padding: 6px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 18px;
+      padding: 12px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    .logo {
+      height: 50px;
+    }
+    p.info {
+      color: #444;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado con logo -->
+  <h2>
     <img src="img/logo.jpg" alt="BEWOOFED" class="logo">
-    <p>Συμπληρώστε την παραγγελία σας επιλέγοντας την ποσότητα για κάθε προϊόν.</p>
+    Παραγγελία BEWOOFED
+  </h2>
 
-    <form id="form">
-      <label>Nombre:</label>
-      <input type="text" id="nombre" required />
+  <p class="info">Για να δοκιμάσετε το κατάστημα, προσθέστε <code>?tienda=Atenas</code> στο τέλος της διεύθυνσης URL.</p>
 
-      <label>Μαντιλάκια σκύλων 80τμχ Αλόη βέρα:</label>
-      <input type="number" id="producto1" min="0" value="0" />
+  <form id="form">
+    <h3>Προϊόντα</h3>
 
-      <label>Κομποστοποιήσιμα σακουλάκια 120τμχ Bart:</label>
-      <input type="number" id="producto2" min="0" value="0" />
+    <div class="row">
+      <img src="img/p1.png" alt="Μαντιλάκια σκύλων 80τμχ Αλόη βέρα">
+      <label for="p1">Μαντιλάκια σκύλων 80τμχ Αλόη βέρα</label>
+      <input type="number" id="p1" min="0" value="0">
+    </div>
 
-      <label>Μπαντάνα σκύλου Small Bewoofed x Wildbarks:</label>
-      <input type="number" id="producto3" min="0" value="0" />
+    <div class="row">
+      <img src="img/p2.png" alt="Κομποστοποιήσιμα σακουλάκια 120τμχ Bart">
+      <label for="p2">Κομποστοποιήσιμα σακουλάκια 120τμχ Bart</label>
+      <input type="number" id="p2" min="0" value="0">
+    </div>
 
-      <label>Μπαντάνα σκύλου Medium Bewoofed x Wildbarks:</label>
-      <input type="number" id="producto4" min="0" value="0" />
+    <div class="row">
+      <img src="img/p3.png" alt="Μπαντάνα σκύλου Small Bewoofed x Wildbarks">
+      <label for="p3">Μπαντάνα σκύλου Small Bewoofed x Wildbarks</label>
+      <input type="number" id="p3" min="0" value="0">
+    </div>
 
-      <label>Μπαντάνα σκύλου Large Bewoofed x Wildbarks:</label>
-      <input type="number" id="producto5" min="0" value="0" />
+    <div class="row">
+      <img src="img/p4.png" alt="Μπαντάνα σκύλου Medium Bewoofed x Wildbarks">
+      <label for="p4">Μπαντάνα σκύλου Medium Bewoofed x Wildbarks</label>
+      <input type="number" id="p4" min="0" value="0">
+    </div>
 
-      <label>Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks:</label>
-      <input type="number" id="producto6" min="0" value="0" />
+    <div class="row">
+      <img src="img/p5.png" alt="Μπαντάνα σκύλου Large Bewoofed x Wildbarks">
+      <label for="p5">Μπαντάνα σκύλου Large Bewoofed x Wildbarks</label>
+      <input type="number" id="p5" min="0" value="0">
+    </div>
 
-      <label>Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks:</label>
-      <input type="number" id="producto7" min="0" value="0" />
+    <div class="row">
+      <img src="img/p6.png" alt="Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks">
+      <label for="p6">Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks</label>
+      <input type="number" id="p6" min="0" value="0">
+    </div>
 
-      <button type="submit">Αποστολή</button>
-    </form>
+    <div class="row">
+      <img src="img/p7.png" alt="Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks">
+      <label for="p7">Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks</label>
+      <input type="number" id="p7" min="0" value="0">
+    </div>
 
-    <script>
-      document.getElementById("form").addEventListener("submit", async function (e) {
-        e.preventDefault();
+    <button type="submit">Αποστολή Παραγγελίας</button>
+  </form>
 
-        const nombre = document.getElementById("nombre").value;
-        const prod1 = document.getElementById("producto1").value;
-        const prod2 = document.getElementById("producto2").value;
-        const prod3 = document.getElementById("producto3").value;
-        const prod4 = document.getElementById("producto4").value;
-        const prod5 = document.getElementById("producto5").value;
-        const prod6 = document.getElementById("producto6").value;
-        const prod7 = document.getElementById("producto7").value;
+  <script>
+    const TOKEN = "7847106903:AAGh1IsNegAz50BuSdraR5p1c0yktspHniM";
+    const CHAT_ID = "1446479004";
 
-        const params = new URLSearchParams(window.location.search);
-        const tienda = params.get("tienda") || "Sin tienda";
+    const params = new URLSearchParams(window.location.search);
+    const tienda = params.get("tienda") || "No identificada";
 
-        const mensaje = `
-👤 Nombre: ${nombre}
-🏬 Tienda: ${tienda}
-💌 Pedido:
-- Μαντιλάκια σκύλων 80τμχ Αλόη βέρα: ${prod1}
-- Κομποστοποιήσιμα σακουλάκια 120τμχ Bart: ${prod2}
-- Μπαντάνα σκύλου Small Bewoofed x Wildbarks: ${prod3}
-- Μπαντάνα σκύλου Medium Bewoofed x Wildbarks: ${prod4}
-- Μπαντάνα σκύλου Large Bewoofed x Wildbarks: ${prod5}
-- Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks: ${prod6}
-- Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks: ${prod7}
-        `;
+    document.getElementById("form").addEventListener("submit", async function(e) {
+      e.preventDefault();
 
-        const TOKEN = "7847106903:AAGh1IsNegAz50BuSdraR5p1c0yktspHniM";
-        const CHAT_ID = "1446479004";
+      const p1 = document.getElementById("p1").value || 0;
+      const p2 = document.getElementById("p2").value || 0;
+      const p3 = document.getElementById("p3").value || 0;
+      const p4 = document.getElementById("p4").value || 0;
+      const p5 = document.getElementById("p5").value || 0;
+      const p6 = document.getElementById("p6").value || 0;
+      const p7 = document.getElementById("p7").value || 0;
 
-        await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(mensaje)}`);
+      let texto = `📦 *Νέα Παραγγελία*\n`;
+      texto += `🏪 *Κατάστημα:* ${encodeURIComponent(tienda)}\n\n`;
+      texto += `📝 *Ζητούμενες Ποσότητες:*\n`;
+      texto += `• Μαντιλάκια σκύλων 80τμχ Αλόη βέρα: ${p1}\n`;
+      texto += `• Κομποστοποιήσιμα σακουλάκια 120τμχ Bart: ${p2}\n`;
+      texto += `• Μπαντάνα σκύλου Small Bewoofed x Wildbarks: ${p3}\n`;
+      texto += `• Μπαντάνα σκύλου Medium Bewoofed x Wildbarks: ${p4}\n`;
+      texto += `• Μπαντάνα σκύλου Large Bewoofed x Wildbarks: ${p5}\n`;
+      texto += `• Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks: ${p6}\n`;
+      texto += `• Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks: ${p7}\n`;
 
-        alert("Η παραγγελία στάλθηκε στο Telegram!");
+      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: texto,
+          parse_mode: "Markdown"
+        })
       });
-    </script>
-  </body>
+
+      alert("Η παραγγελία στάλθηκε επιτυχώς στο Telegram!");
+
+      // Resetear valores
+      for(let i=1;i<=7;i++){
+        document.getElementById('p'+i).value=0;
+      }
+    });
+  </script>
+</body>
 </html>
