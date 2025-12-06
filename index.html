@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8">
+    <title>Παραγγελία BEWOOFED</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+        background-color: #f9f9f9;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      form label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #e65c00;
+      }
+      img.logo {
+        width: 120px;
+        height: auto;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
+      p {
+        text-align: center;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Παραγγελία BEWOOFED</h2>
+    <img src="img/logo.jpg" alt="BEWOOFED" class="logo">
+    <p>Συμπληρώστε την παραγγελία σας επιλέγοντας την ποσότητα για κάθε προϊόν.</p>
+
+    <form id="form">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" required />
+
+      <label>Μαντιλάκια σκύλων 80τμχ Αλόη βέρα:</label>
+      <input type="number" id="producto1" min="0" value="0" />
+
+      <label>Κομποστοποιήσιμα σακουλάκια 120τμχ Bart:</label>
+      <input type="number" id="producto2" min="0" value="0" />
+
+      <label>Μπαντάνα σκύλου Small Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto3" min="0" value="0" />
+
+      <label>Μπαντάνα σκύλου Medium Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto4" min="0" value="0" />
+
+      <label>Μπαντάνα σκύλου Large Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto5" min="0" value="0" />
+
+      <label>Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto6" min="0" value="0" />
+
+      <label>Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks:</label>
+      <input type="number" id="producto7" min="0" value="0" />
+
+      <button type="submit">Αποστολή</button>
+    </form>
+
+    <script>
+      document.getElementById("form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value;
+        const prod1 = document.getElementById("producto1").value;
+        const prod2 = document.getElementById("producto2").value;
+        const prod3 = document.getElementById("producto3").value;
+        const prod4 = document.getElementById("producto4").value;
+        const prod5 = document.getElementById("producto5").value;
+        const prod6 = document.getElementById("producto6").value;
+        const prod7 = document.getElementById("producto7").value;
+
+        const params = new URLSearchParams(window.location.search);
+        const tienda = params.get("tienda") || "Sin tienda";
+
+        const mensaje = `
+👤 Nombre: ${nombre}
+🏬 Tienda: ${tienda}
+💌 Pedido:
+- Μαντιλάκια σκύλων 80τμχ Αλόη βέρα: ${prod1}
+- Κομποστοποιήσιμα σακουλάκια 120τμχ Bart: ${prod2}
+- Μπαντάνα σκύλου Small Bewoofed x Wildbarks: ${prod3}
+- Μπαντάνα σκύλου Medium Bewoofed x Wildbarks: ${prod4}
+- Μπαντάνα σκύλου Large Bewoofed x Wildbarks: ${prod5}
+- Θήκη για ρολά υφασμάτινη Figo Bewoofed x Wildbarks: ${prod6}
+- Θήκη για ρολά υφασμάτινη Green Bewoofed x Wildbarks: ${prod7}
+        `;
+
+        const TOKEN = "7847106903:AAGh1IsNegAz50BuSdraR5p1c0yktspHniM";
+        const CHAT_ID = "1446479004";
+
+        await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(mensaje)}`);
+
+        alert("Η παραγγελία στάλθηκε στο Telegram!");
+      });
+    </script>
+  </body>
+</html>
